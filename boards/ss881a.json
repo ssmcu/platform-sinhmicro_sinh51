@@ -1,7 +1,7 @@
 {
   "build": {
-    "core": "naked",
-    "extra_flags": "-DN79E84X -DN79E844 -DNAKED_ARCH_MCS51 -DNAKED_MCS51_N79E84X",
+    "core": "sinh51",
+    "extra_flags": "",
     "f_cpu": "12000000L",
     "size_iram": 192,
     "size_xram": 0,

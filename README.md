@@ -23,11 +23,11 @@ board = ...
 
 ```ini
 [env:development]
-platform = https://github.com/platformio/platform-sinhmciro_sinh51.git
+platform = https://github.com/ssmcu/platform-sinhmciro_sinh51.git
 board = ...
 ...
 ```
 
 # Configuration
 
-Please navigate to [documentation](http://docs.platformio.org/page/platforms/sinhmicro_sinh51.html).
+Please navigate to [documentation](https://github.com/ssmcu/platform-sinhmicro_sinh51).
