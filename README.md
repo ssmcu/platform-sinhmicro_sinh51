@@ -2,8 +2,8 @@
 
 The Sinhmicro SINH51 is an 8-bit MCU series compatible with 8051 instruction.
 
-* [Home](http://platformio.org/platforms/sinhmicro_sinh51) (home page in PlatformIO Registry)
-* [Documentation](http://docs.platformio.org/page/platforms/sinhmicro_sinh51.html) (advanced usage, packages, boards, frameworks, etc.)
+* [Home](https://github.com/ssmcu/platform-sinhmicro_sinh51)
+* [Documentation](https://github.com/ssmcu/platform-sinhmicro_sinh51)
 
 # Usage
 
