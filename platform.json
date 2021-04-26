@@ -1,0 +1,29 @@
+{
+  "name": "sinhmicro_sinh51",
+  "title": "Sinh Micro SINH51",
+  "description": "The 8-bit MCU Compatible with 8051 instruction set developed by Sinh Micro.",
+  "homepage": "http://www.sinhmicro.com",
+  "license": "Apache-2.0",
+  "keywords": [
+      "dev-platform",
+      "Sinhmicro",
+      "SINH51",
+      "8051",
+      "CISC"
+  ],
+  "engines": {
+    "platformio": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssmcu/platform-sinhmicro_sinh51.git"
+  },
+  "version": "0.0.3",
+  "packages": {
+    "toolchain-sdcc": {
+      "type": "toolchain",
+      "owner": "platformio",
+      "version": "~1.30804.10766"
+    }
+  }
+}

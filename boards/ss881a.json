@@ -1,0 +1,21 @@
+{
+  "build": {
+    "core": "naked",
+    "extra_flags": "-DN79E84X -DN79E844 -DNAKED_ARCH_MCS51 -DNAKED_MCS51_N79E84X",
+    "f_cpu": "12000000L",
+    "size_iram": 192,
+    "size_xram": 0,
+    "size_code": 8192,
+    "mcu": "ss881a",
+    "cpu": "mcs51",
+    "variant": "ss881x"
+  },
+  "frameworks": [],
+  "upload": {
+    "maximum_ram_size": 192,
+    "maximum_size": 8192
+  },
+  "name": "SS881A",
+  "url": "http://www.sinhmicro.com/index.php/products/power_mcu/ss881x",
+  "vendor": "Sinhmicro"
+}
