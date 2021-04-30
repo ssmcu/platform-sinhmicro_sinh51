@@ -6,9 +6,9 @@
     "size_iram": 192,
     "size_xram": 0,
     "size_code": 8192,
-    "mcu": "ss881a",
+    "mcu": "SS881A",
     "cpu": "mcs51",
-    "variant": "ss881x"
+    "variant": "SS881X"
   },
   "frameworks": [],
   "upload": {

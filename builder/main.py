@@ -83,7 +83,8 @@ env.Append(
     CCFLAGS=[
         "--opt-code-size",  # optimize for size
         "--peep-return",    # peephole optimization for return instructions
-        "-m%s" % board_config.get("build.cpu")
+        "-m%s" % board_config.get("build.cpu"),
+        "-DCONFIG_SERIES_%s" % board_config.get("build.variant")
     ],
 
     CPPDEFINES=[

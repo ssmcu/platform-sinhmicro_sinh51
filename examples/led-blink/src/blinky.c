@@ -20,14 +20,10 @@
  * limitations under the License.
  */
 
-#if defined(__C51__)    /* keil C51 */
-sfr             WDTCON  = 0x86;
-sfr             P0      = 0x80;
-sfr             P0MOD   = 0x95;
-#elif defined(__SDCC)   /* SDCC */
-__sfr __at 0x86 WDTCON;
-__sfr __at 0x80 P0;
-__sfr __at 0x95 P0MOD;
+#if defined(CONFIG_SERIES_SS881X)
+#include "ss881x.h"
+#else
+#error("Error MCU Series")
 #endif
 
 static void _delay_ms(unsigned char ms)
