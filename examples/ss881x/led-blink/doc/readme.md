@@ -6,7 +6,7 @@
 ## 2.1 PlatformIO IDE
 
 ## 2.2 Keil C51 IDE
-![image](https://github.com/ssmcu/platform-sinhmicro_sinh51/blob/main/examples/ss881x/led-blink/doc/led-blink-build.gif)
+![image](./led-blink-build.gif)
 1. 打开“blink-led”目录。
 2. 打开"prj-->keil"目录。
 3. 打开“ss881x.uvproj"工程文件。
@@ -21,7 +21,7 @@
 ### 3.1.1 PlatformIO IDE
 
 ### 3.1.2 Keil C51 IDE
-![image](https://github.com/ssmcu/platform-sinhmicro_sinh51/blob/main/examples/ss881x/led-blink/doc/led-blink-simulator.gif)
+![image](./led-blink-simulator.gif)
 1. 编译工程。
 2. 打开"Option-->Debug"界面。
 3. 配置工程的调试选项为模拟器。
