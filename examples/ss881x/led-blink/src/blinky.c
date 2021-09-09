@@ -20,11 +20,7 @@
  * limitations under the License.
  */
 
-#if defined(CONFIG_SERIES_SS881X)
 #include "ss881x.h"
-#else
-#error("Error MCU Series")
-#endif
 
 static void _delay_ms(unsigned char ms)
 {	
@@ -46,7 +42,7 @@ int main()
     P0MOD &= ~0x01;         /* P00 as GPIO output */
     P0 &= ~0x01;            /* P00 output low */
 
-    while(1) {
+    while (1) {
         P0 &= ~0x01;        /* P00 output low */
         _delay_ms(250);
         _delay_ms(250);
