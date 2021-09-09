@@ -19,7 +19,15 @@
 # 3. 测试步骤
 
 ## 3.1 通过模拟器测试
+### 3.1.1 PlatformIO IDE
 
-
+### 3.1.2 Keil C51 IDE
+![image](https://github.com/ssmcu/platform-sinhmicro_sinh51/blob/main/examples/ss881x/led-blink/doc/led-blink-simulator.gif)
+1. 编译工程。
+2. 打开"Option-->Debug"界面。
+3. 配置工程的调试选项为模拟器。
+4. 启动调试。
+5. 在“Peripherals”标签中打开I/O模拟器。
+6. 运行代码，通过I/O或LED模拟器观察执行效果。
 
 ## 3.2 通过开发板测试
