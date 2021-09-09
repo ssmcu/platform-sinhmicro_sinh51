@@ -5,6 +5,23 @@
 
 ## 2.1 PlatformIO IDE
 
+### 2.1.1 参考如下链接，搭建PlatformIO IDE的开发环境：
+
+http://www.sinhmicro.com.cn/index.php/more/blog/vscode-platformio-sinh51
+
+### 2.1.2 在PlatformIO IDE中打开工程并编译
+
+![image](./led-blink-build2.gif)
+
+1. VSCode中点击PlatformIO图标，打开PlatformIO IDE。
+2. 点击Open，打开PlatformIO的Home界面。
+3. 在“Projects”界面，点击“Add Existing”添加“led-blink”工程。
+4. 在弹出的文件浏览窗口中，找到并打开“led-blink”目录。
+5. 打开目录后，在列出的工程标签中打开工程。
+6. 点击PlatformIO的图标，找到“PROJECT TASKS”标签。
+7. 点击"Build"按钮，编译工程。
+8. “.pio\build\ss881a”目录中生成非加密的二进制文件。
+
 ## 2.2 Keil C51 IDE
 ![image](./led-blink-build.gif)
 1. 打开“blink-led”目录。
@@ -19,6 +36,8 @@
 
 ## 3.1 通过模拟器测试
 ### 3.1.1 PlatformIO IDE
+
+暂不支持。
 
 ### 3.1.2 Keil C51 IDE
 ![image](./led-blink-simulator.gif)
