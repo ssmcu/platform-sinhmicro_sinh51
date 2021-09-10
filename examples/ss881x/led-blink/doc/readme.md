@@ -5,7 +5,7 @@
 
 ## 2.1 PlatformIO IDE
 
-### 2.1.1 参考如下链接，搭建PlatformIO IDE的开发环境：
+### 2.1.1 参考如下链接，搭建PlatformIO IDE的开发环境
 
 http://www.sinhmicro.com.cn/index.php/more/blog/vscode-platformio-sinh51
 
@@ -23,6 +23,13 @@ http://www.sinhmicro.com.cn/index.php/more/blog/vscode-platformio-sinh51
 8. “.pio\build\ss881a”目录中生成非加密的二进制文件。
 
 ## 2.2 Keil C51 IDE
+
+### 2.2.1 参考如下链接，搭建Keil C51 IDE的开发环境
+
+http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
+
+### 2.2.2 在Keil C51 IDE中打开工程并编译
+
 ![image](./led-blink-build.gif)
 1. 打开“blink-led”目录。
 2. 打开"prj-->keil"目录。
