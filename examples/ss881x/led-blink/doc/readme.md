@@ -56,3 +56,21 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 6. 运行代码，通过I/O或LED模拟器观察执行效果。
 
 ## 3.2 通过开发板测试
+
+### 3.2.1 参考如下链接，进行硬件连接
+
+http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
+![image](./hardware-link.gif)
+
+### 3.2.2 通过Flash_Tools烧录固件
+![image](./led-blink-burn.gif)
+1. 打开Flash_Tools工具。
+2. 点击“连接”按钮。
+3. 在“文件选择”处，选择相应的固件。
+4. 点击“烧录”按钮，查看烧录状态。
+
+### 3.2.3 硬件调试
+![image](./hardware-test.gif)
+1. 使用USB B连接线将调试器与PC连接起来。
+2. 点击Flash烧录软件，芯片状态下的“连接按钮”。
+3. 观察LED灯闪烁状态。
