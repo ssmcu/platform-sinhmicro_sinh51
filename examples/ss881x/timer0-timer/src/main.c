@@ -25,7 +25,7 @@
 typedef unsigned char u8;
 typedef unsigned int u16;
 
-void Timer0Init()
+void timer0_init()
 {
     TCON1 |= 0x08;         //TCLK0=SCLK/2=2MHz       
     TMOD  |= 0x02;         //Timer0 8bit reload model
@@ -44,15 +44,15 @@ int main()
     P0MOD  &= ~0x01;       // P00 as GPIO output
     P0     &= ~0x01;       // P00 output low
     
-    Timer0_Init();
+    timer0_init();
     while (1) {
     }
 }
-void Timer0() interrupt 1
+void timer0_ISR() interrupt 1
 {
     static u16 i;
     i++;
-    if(i==10000)            //每隔1s,P00翻转一次
+    if (i == 10000)            //每隔1s,P00翻转一次
     {
         P0  ^= 0x01;
         i  = 0;    
