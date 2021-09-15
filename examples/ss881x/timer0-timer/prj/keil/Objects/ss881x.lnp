@@ -1,0 +1,5 @@
+".\Objects\START_SS881X.obj",
+".\Objects\main.obj" 
+TO ".\Objects\ss881x" 
+
+PRINT(".\Listings\ss881x.map") REMOVEUNUSED 
