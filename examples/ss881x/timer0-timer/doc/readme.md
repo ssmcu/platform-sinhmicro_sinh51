@@ -19,7 +19,7 @@ http://www.sinhmicro.com.cn/index.php/more/blog/vscode-platformio-sinh51
 
 和其它示例基本一致，不再详细说明，具体请参考：
 
-[led-blink/doc/readme.md](ssmcu/platform-sinhmicro_sinh51/examples/ss881x/led-blink/doc/readme.md)
+[led-blink/doc/readme.md](../../led-blink/doc/readme.md)
 
 ## 3.2 Keil C51 IDE
 
@@ -31,7 +31,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 和其它示例基本一致，不再详细说明，具体请参考：
 
-[](../../led-blink/doc/readme.md)
+[led-blink/doc/readme.md](../../led-blink/doc/readme.md)
 
 # 4. 测试步骤
 
@@ -63,7 +63,7 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 和其它示例基本一致，不再详细说明，具体请参考：
 
-[](../../led-blink/doc/readme.md)
+[led-blink/doc/readme.md](../../led-blink/doc/readme.md)
 
 ### 4.2.3 硬件调试
 
