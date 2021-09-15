@@ -19,7 +19,7 @@ http://www.sinhmicro.com.cn/index.php/more/blog/vscode-platformio-sinh51
 
 和其它示例基本一致，不再详细说明，具体请参考：
 
-[file.md](sinhmicro/platform-sinhmicro_sinh51/examples/ss881x/led-blink/doc/readme.md)
+[](ssmcu/platform-sinhmicro_sinh51/examples/ss881x/led-blink/doc/readme.md)
 
 ## 3.2 Keil C51 IDE
 
