@@ -62,7 +62,7 @@ int main()
 #if (EINT1_PIN_USED == 0x03)
     MFP0    |= 0x80;        // P03 as EINT1
 #elif (EINT1_PIN_USED == 0x14)
-    MFP3    |=30;         // P14 as EINT1
+    MFP3    |=0x30;         // P14 as EINT1
 #endif
 
     EINTCON = 0xA0;         // EINT1 rise edge

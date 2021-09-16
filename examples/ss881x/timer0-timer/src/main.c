@@ -48,7 +48,12 @@ int main()
     while (1) {
     }
 }
+
+#if defined(__C51__)        // keil C51 compiler
 void timer0_ISR() interrupt 1
+#else                       // SDCC compiler
+void timer0_ISR() __interrupt 1
+#endif
 {
     static u16 i;
     i++;

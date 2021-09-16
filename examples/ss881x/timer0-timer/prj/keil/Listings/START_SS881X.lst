@@ -1,4 +1,4 @@
-AX51 MACRO ASSEMBLER  START_SS881X                                                          09/15/21 18:08:20 PAGE     1
+AX51 MACRO ASSEMBLER  START_SS881X                                                          09/16/21 11:38:43 PAGE     1
 
 
 MACRO ASSEMBLER AX51 V3.15.3.0
@@ -65,7 +65,7 @@ LOC    OBJ             LINE     SOURCE
                          55                     NAME    ?C_STARTUP
                          56     
 ------                   57     ?C_C51STARTUP   SEGMENT   CODE
-AX51 MACRO ASSEMBLER  START_SS881X                                                          09/15/21 18:08:20 PAGE     2
+AX51 MACRO ASSEMBLER  START_SS881X                                                          09/16/21 11:38:43 PAGE     2
 
 ------                   58     ?STACK          SEGMENT   IDATA
                          59     
@@ -100,7 +100,7 @@ LOC    OBJ             LINE     SOURCE
                                 ENDIF
                          89     
                          90                     END
-AX51 MACRO ASSEMBLER  START_SS881X                                                          09/15/21 18:08:20 PAGE     3
+AX51 MACRO ASSEMBLER  START_SS881X                                                          09/16/21 11:38:43 PAGE     3
 
 SYMBOL TABLE LISTING
 ------ ----- -------
