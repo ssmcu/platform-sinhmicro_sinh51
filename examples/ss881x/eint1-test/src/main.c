@@ -1,7 +1,7 @@
 /*
- * eint0-test.c
+ * eint1-test.c
  *
- * EINT0 test.
+ * EINT1 test.
  *
  * Author: lipeng<lp@sinhmicro.com>
  * 
@@ -22,7 +22,7 @@
 
 #include "ss881x.h"
 
-#define EINT1_PIN_USED (0x03)   //0x03: reuse P03;  0x14: reuse P14
+#define EINT1_PIN_USED (0x03)               //0x03: reuse P03;  0x14: reuse P14
 
 static void _delay_ms(unsigned char ms)
 {	
@@ -38,37 +38,37 @@ static void _delay_ms(unsigned char ms)
 }
 
 
-#if defined(__C51__)        // keil C51 compiler
+#if defined(__C51__)                         // keil C51 compiler
 void eint1_ISR(void) interrupt 2
-#else                       // SDCC compiler
+#else                                        // SDCC compiler
 void eint1_ISR(void) __interrupt 2
 #endif
 {
     
-    P0 ^= 0x01;             // P00 toggle
-    
+    P0 ^= 0x01;                              // P00 toggle
+     
     _delay_ms(250);
     
-    EINTCON &= ~0x02;       // clear IE1
+    EINTCON &= ~0x02;                        // clear IE1
 }
 
 int main()
 {
-    WDTCON  = 0x05;         // disable watchdog at startup
+    WDTCON  = 0x05;                          // disable watchdog at startup
 
-    P0MOD   &= ~0x01;       // P00 as GPIO output
-    P0      &= ~0x01;       // P00 output low
+    P0MOD   &= ~0x01;                        // P00 as GPIO output
+    P0      &= ~0x01;                        // P00 output low
     
 #if (EINT1_PIN_USED == 0x03)
-    MFP0    |= 0x80;        // P03 as EINT1
+    MFP0    |= 0x80;                         // P03 as EINT1
 #elif (EINT1_PIN_USED == 0x14)
-    MFP3    |=0x30;         // P14 as EINT1
+    MFP3    |=0x30;                          // P14 as EINT1
 #endif
 
-    EINTCON = 0xA0;         // EINT1 rise edge
-    EX1     = 1;            // enable EINT1 IRQ
+    EINTCON = 0xA0;                          // EINT1 rise edge
+    EX1     = 1;                             // enable EINT1 IRQ
 
-    EA      = 1;            // Enable global IRQ
+    EA      = 1;                             // Enable global IRQ
 
     while (1) {
     }
