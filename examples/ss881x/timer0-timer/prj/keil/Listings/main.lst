@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.0.0   MAIN                                                              09/16/2021 11:38:43 PAGE 1   
+C51 COMPILER V9.60.0.0   MAIN                                                              09/16/2021 17:34:28 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
@@ -9,11 +9,11 @@ COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\src\main.c OMF2 OPTIMIZE(8
 line level    source
 
    1          /*
-   2           * eint0-test.c
+   2           * timer0-timer.c
    3           *
-   4           * EINT0 test.
+   4           * TIMER test.
    5           *
-   6           * Author: lipeng<lp@sinhmicro.com>
+   6           * Author: zhanyingwei<3080940495@qq.com>
    7           * 
    8           * Copyright (C) 2021 Sinh Micro, Inc.
    9           *
@@ -62,7 +62,7 @@ line level    source
   52          #if defined(__C51__)        // keil C51 compiler
   53          void timer0_ISR() interrupt 1
   54          #else                       // SDCC compiler
-C51 COMPILER V9.60.0.0   MAIN                                                              09/16/2021 11:38:43 PAGE 2   
+C51 COMPILER V9.60.0.0   MAIN                                                              09/16/2021 17:34:28 PAGE 2   
 
               void timer0_ISR() __interrupt 1
               #endif

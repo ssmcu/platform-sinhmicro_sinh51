@@ -22,40 +22,40 @@
 
 #include "ss881x.h"
 
-#define COUNTER (10)         //脉冲个数
+#define COUNTER (10)              //脉冲个数
 
 typedef unsigned char u8;
 typedef unsigned int u16;
 
 void timer1_init()
 {     
-    TMOD = 0x40;                  // Timer1 13bit model
-    TL1  = 0x00;                  // 设置低5位初值(只使用低5位)
-    TH1  = 0x00;                  // 设置高8位初值
-    ET1  = 1;                     // enable ET1 IRQ
-    EA   = 1;                     // Enable global IRQ
-    TR1  = 1;                     // start-up Timer1
+    TMOD = 0x40;                   // Timer1 13bit model
+    TL1  = 0x00;                   // 设置低5位初值(只使用低5位)
+    TH1  = 0x00;                   // 设置高8位初值
+    ET1  = 1;                      // enable ET1 IRQ
+    EA   = 1;                      // Enable global IRQ
+    TR1  = 1;                      // start-up Timer1
 }
 
 void pulse_counter(u16 number)     // 通过P02输出脉冲提供给P13
 {
-    u16 i=0;
-    number  = 2 * number;
+    u16 i = 0;
+    number = 2 * number;
     
-    for(i=0;i<number;i++)
+    for (i = 0; i < number; i++)
     {
-        P0  ^= 0x04;       //P02状态翻转
+        P0 ^= 0x04;                //P02状态翻转
     }
 }
 
 int main()
 {
-    WDTCON  = 0x05;         // disable watchdog at startup
+    WDTCON  = 0x05;                // disable watchdog at startup
    
-    P0MOD  &= ~0x04;       // P02 as GPIO output
+    P0MOD  &= ~0x04;               // P02 as GPIO output
     
     MFP2   &= ~0xC0;
-    MFP2   |= 0xC0;       // P13 as T1
+    MFP2   |= 0xC0;                // P13 as T1
     
     timer1_init();
     pulse_counter(COUNTER);

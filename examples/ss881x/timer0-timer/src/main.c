@@ -1,9 +1,9 @@
 /*
- * eint0-test.c
+ * timer0-timer.c
  *
- * EINT0 test.
+ * TIMER test.
  *
- * Author: lipeng<lp@sinhmicro.com>
+ * Author: zhanyingwei<3080940495@qq.com>
  * 
  * Copyright (C) 2021 Sinh Micro, Inc.
  *

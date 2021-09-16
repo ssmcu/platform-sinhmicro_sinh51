@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.97.0                                                          09/16/2021  11:38:43  PAGE 1
+LX51 LINKER/LOCATER V4.66.97.0                                                          09/16/2021  17:34:29  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.97.0, INVOKED BY:
@@ -67,7 +67,7 @@ TIMER0_INIT/MAIN            ----- -----  ----- -----
 TIMER0_ISR/MAIN             ----- -----  ----- -----
 
 
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 2
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 2
 
 
 
@@ -135,7 +135,7 @@ PUBLIC SYMBOLS OF MODULE:  .\Objects\ss881x (?C_STARTUP)
 *SFR* 00000083H   DATA     BYTE      DPH
 *SFR* 00000085H   DATA     BYTE      DPH1
 *SFR* 00000082H   DATA     BYTE      DPL
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 3
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 3
 
 
 *SFR* 00000084H   DATA     BYTE      DPL1
@@ -203,7 +203,7 @@ PUBLIC SYMBOLS OF MODULE:  .\Objects\ss881x (?C_STARTUP)
 *SFR* 00000080H.4 DATA     BIT       P0_4
 *SFR* 00000080H.5 DATA     BIT       P0_5
 *SFR* 00000080H.6 DATA     BIT       P0_6
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 4
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 4
 
 
 *SFR* 00000080H.7 DATA     BIT       P0_7
@@ -271,7 +271,7 @@ PUBLIC SYMBOLS OF MODULE:  .\Objects\ss881x (?C_STARTUP)
 *SFR* 000000C5H   DATA     BYTE      T2D3
 *SFR* 000000C6H   DATA     BYTE      T2D4
 *SFR* 000000C7H   DATA     BYTE      T2D5
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 5
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 5
 
 
 *SFR* 000000CAH   DATA     BYTE      T2D6
@@ -339,7 +339,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ss881x (?C_STARTUP)
       ====================================================
       ---         MODULE    ---      ---       ?C_STARTUP
       01000000H   PUBLIC    CODE     NEAR LAB  ?C_STARTUP
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 6
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 6
 
 
       000000E0H   SFRSYM    DATA     BYTE      ACC
@@ -407,7 +407,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ss881x (?C_STARTUP)
       00000090H.2 SFRSYM    DATA     BIT       P1_2
       00000080H.3 SFRSYM    DATA     BIT       P0_3
       000000A9H   SFRSYM    DATA     BYTE      EINTCON
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 7
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 7
 
 
       00000090H.3 SFRSYM    DATA     BIT       P1_3
@@ -475,7 +475,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ss881x (?C_STARTUP)
       00000084H   SFRSYM    DATA     BYTE      EFRADR
       000000F8H.3 SFRSYM    DATA     BIT       PCHGEN
       000000BDH   SFRSYM    DATA     BYTE      DCMPCON0
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 8
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 8
 
 
       000000D1H   SFRSYM    DATA     BYTE      IICCON
@@ -543,7 +543,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ss881x (?C_STARTUP)
       000000A0H   SFRSYM    DATA     BYTE      RESETS
       000000F4H   SFRSYM    DATA     BYTE      ADCDAT67H
       000000C6H   SFRSYM    DATA     BYTE      TCC2L
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 9
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 9
 
 
       000000E6H   SFRSYM    DATA     BYTE      ADCCON0
@@ -611,7 +611,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\ss881x (?C_STARTUP)
       00000098H.7 SFRSYM    DATA     BIT       PAREN
       000000E2H   SFRSYM    DATA     BYTE      PRCCON0
       000000E3H   SFRSYM    DATA     BYTE      PRCCON1
-LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  11:38:43  PAGE 10
+LX51 LINKER/LOCATER V4.66.97.0                                                        09/16/2021  17:34:29  PAGE 10
 
 
       000000D6H   SFRSYM    DATA     BYTE      PRCCON2
