@@ -58,8 +58,6 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 暂不支持。
 
 ### 4.1.2 Keil C51 IDE
-可自行修改delay时间和systick周期，观察 I/O p00,p01的闪烁频率
-
 ![image](./test.gif)
 
 1. 编译工程。
