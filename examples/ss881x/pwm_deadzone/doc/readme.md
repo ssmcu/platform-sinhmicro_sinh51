@@ -60,7 +60,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 ### 4.1.2 Keil C51 IDE
 可自行修改delay时间和systick周期，观察 I/O p00,p01的闪烁频率
 
-![image](/test.gif)
+![image](./test.gif)
 
 1. 编译工程。
 2. 打开"Option-->Debug"界面。
@@ -77,11 +77,11 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 需要使用示波器两个通道分别连接P04,P10进行观察，可以分别调用和不调用PROU_deadzone_Init();的不同，此处展示正确的对比
 
-![image](/dead.gif)
+![image](./dead.gif)
 
 ​                                                                       插入死区
 
-![image](/no_dead.gif)
+![image](./no_dead.gif)
 
 ​		                                                                          不插入死区
 
