@@ -47,7 +47,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
-![](D:\gitper\hardware_breathLED\doc\hardware_breathLED_Link.gif)
+![image](./hardware_breathLED_Link.gif)
 
 （将P00接到拓展版LED上）
 
@@ -63,5 +63,5 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 2. 点击Flash烧录软件，芯片状态下的“连接按钮”。
 3. 观察LED灯闪烁状态
 
-![](D:\gitper\hardware_breathLED\doc\hardware_breathLED.gif)
+![image](./hardware_breathLED.gif)
 
