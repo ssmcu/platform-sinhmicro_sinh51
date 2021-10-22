@@ -74,5 +74,5 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 2. 点击Flash烧录软件，芯片状态下的“连接按钮”。
 3. 观察LED灯闪烁状态
 
-![](D:\gitper\systick\doc\systick_led.gif)
+![](D:\gitper\hardware_breathLED\doc\hardware_breathLED.gif)
 

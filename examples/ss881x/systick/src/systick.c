@@ -40,10 +40,10 @@ void systick_init(void)
 
 void systick_delay(unsigned int time)
 {
-        systick_interrupt_flag = 1;		        /* start count */
-        while (systick_interrupt_counter/time != 1);	/* wait count++ */
-        systick_interrupt_flag = 0;
         systick_interrupt_counter = 0;                  /* clear for next */
+        systick_interrupt_flag = 1;		        /* start count */
+        while (systick_interrupt_counter<=time);	/* wait count++ */
+        systick_interrupt_flag = 0;
 }
 
 void main(void)
