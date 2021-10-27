@@ -26,17 +26,23 @@
 
 ## 4. 在本地用命令行生成git的公匙（给到项目的管理员）
 
-1) 输入命令：cd ~
+1. 输入命令：cd ~
 
-2) 然后输入：ssh-keygen.exe
+2. 然后输入：ssh-keygen.exe
 
-3) 然后按回车，再次按回车，在回车，按三次回车：
+   （2021年09月26日发布的`OpenSSH 8.8`中移除了对RSA-SHA1的支持，如果您升级到`OpenSSH 8.8`或以上版本，则使用ssh推拉Gitee代码时会出现校验不通过的问题
+
+   ​						**ssh-keygen -t ed25519 -C "your@example.email"**
+
+3. 然后按回车，再次按回车，在回车，按三次回车：
 
 <img src="./picture/2.jpg" style="zoom:80%;" />
 
-4) 在C:\Users\cyan1\.ssh（注意：cyan1是你的电脑名字，不同的人不一样）下找到id_rsa文件（后缀为.pub，有的电脑不显示后缀），如下图所示，将此文件发送给项目的管理员。
+
 
 <img src="./picture/3.jpg" style="zoom: 80%;" />
+
+5. 
 
 ## 5. 项目管理员在项目后台加入git公匙。开通上传权限
 
