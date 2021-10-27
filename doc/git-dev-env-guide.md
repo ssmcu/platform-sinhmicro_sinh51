@@ -30,9 +30,9 @@
 
 2. 然后输入：ssh-keygen.exe
 
-   （2021年09月26日发布的`OpenSSH 8.8`中移除了对RSA-SHA1的支持，如果您升级到`OpenSSH 8.8`或以上版本，则使用ssh推拉Gitee代码时会出现校验不通过的问题
+   （2021年09月26日发布的`OpenSSH 8.8`中移除了对RSA-SHA1的支持，如果您升级到`OpenSSH 8.8`或以上版本，则使用ssh推拉Gitee代码时会出现校验不通过的问题。请改用以下命令
 
-   ​						**ssh-keygen -t ed25519 -C "your@example.email"**
+   ​						（ssh-keygen -t ed25519 -C "your@example.email"）
 
 3. 然后按回车，再次按回车，在回车，按三次回车：
 
