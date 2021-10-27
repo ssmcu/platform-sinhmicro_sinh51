@@ -97,13 +97,13 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 需要使用示波器两个通道分别连接P04,P10进行观察，可以分别调用和不调用PROU_deadzone_Init();的不同，此处展示正确的对比
 
-<img src="./dead.gif" alt="image" style="zoom: 25%;" />
+<img src="./dead.gif" alt="image"  />
 
-​                                                                       插入死区
+​                                                                                                                                插入死区
 
-<img src="./no_dead.gif" alt="image" style="zoom:25%;" />
+<img src="./no_dead.gif" alt="image"  />
 
-​		                                                                          不插入死区
+​		                                                                                                                          不插入死区
 
 ### 4.2.2 通过Flash_Tools烧录固件
 

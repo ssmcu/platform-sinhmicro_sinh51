@@ -63,14 +63,14 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 3. 使用杜邦线将BAT和VDD(VCC)连接起来
 
-   <img src="./connect.gif" alt="image" style="zoom: 33%;" />
+   <img src="./connect.gif">
 
 4. 将P00和P01分别连接到两个LED上，上电后P01闪烁
 
-<img src="./work.gif" alt="image" style="zoom: 67%;" />
+<img src="./work.gif">
 
 
 
 5. 将VCC(VDD)一端拔出后再插上，可以看到P00闪烁两次，表示读到低电压复位标志
 
-<img src="./reset.gif" alt="image" style="zoom: 50%;" />
+<img src="./reset.gif">
