@@ -47,7 +47,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
-![image](./hardware_breathLED_Link.gif)
+<img src="./hardware_breathLED_Link.gif" alt="image" style="zoom: 50%;" />
 
 （将P00接到拓展版LED上）
 

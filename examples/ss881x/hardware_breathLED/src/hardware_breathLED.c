@@ -1,9 +1,9 @@
 /*
- * time2-capture
+ * hardware breathLED
  *
  * Use the hardware breathLED mode output.
  *
- * Author: liwanbang<584847742@qq.com>
+ * Author: <liwanbang@sinhmicro.com.cn>
  * 
  * Copyright (C) 2021 Sinh Micro, Inc.
  *

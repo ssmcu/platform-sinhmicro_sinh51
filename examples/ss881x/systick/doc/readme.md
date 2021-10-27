@@ -58,7 +58,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
-![image](./systick-hardware.gif)
+<img src="./systick-hardware.gif" alt="image" style="zoom: 33%;" />
 
 （使用杜邦线：将开发板的p00和p01分别连接至拓展版的LED1,LED2排针上，并将开发板的GND与拓展版的GND相连。）
 

@@ -5,23 +5,45 @@
 
 首先是实现比较输出，需要配置HIRC和SCLK,复用cc0和ccc1功能。后在定时器中配置重载值，数据寄存器初值，比较值tcc,时钟分频和来源，比较输出的极性。 其关系是
 
-
-
-​					   (2^13 - TCCx-  1)/(2^13 - TR2)  =  占空比
+​					   **(2^13 - TCCx-  1)/(2^13 - TR2)  =  占空比**
 
 计时器从重载值开始，计数到TCCx 按照极性改变输出，计数到溢出时再输出相反的电平。
 
-
-
 死区功能则是在PROU中进行配置 使能DLL并选择来源SCL，设置其频率，开启cc0/cc1死区插入功能。设置死区插入时间的档位（0-15）。
 
+1.  系统时钟及引脚配置
 
+   a)   使能HIRC
 
-通过RCCON寄存器使能HIRC时钟，CLKCON0寄存器设置SCLK分频系数并选择SCLK源。通过MFP1寄存器复用P04为CC0，EFR12H和MFP2寄存器复用P10为CC1。通过T2MOD设置比较输出极性。通过T2D2寄存器设置tcc0低8位。通过T2D6设置TH2[2:0]，tcc0高5位。T2D3寄存器设置tcc1低8位。T2D7 配置 trh[2:0],tcc1高5位。T2D0设置TL2低8位初值。T2D8设置TH2[4:3], T2D1和T2D9设置TR2.具体可参照手册和注释。
+   b)   SCLK源头设定HIRC,SCLK分频设置为4
 
+   c)   引脚复用P04为CC0, P10为CC1
 
+2. 定时器2比较输出配置
 
-通过DLLCON1/0配置DLL开启，HPWMCON0选择死区插入功能，HPWMDZT0设置时间档位
+   a)   设置定时器2从SCLK的分频系数
+
+   b)   设置TCCS0,TSS1的比较输出极性
+
+   c)   启动TCCM0,TCCM1的比较功能
+
+   d)   设置比较寄存器TCC0,TCC1的值
+
+   e)   设置数据寄存器的初值
+
+   f)   设置重载值
+
+   g)   开启定时器2
+
+3. 可编程频率输出单元(PFOU)插入死区配置
+
+   a)   选择DLL时钟源为SCLK，使能DLL控制
+
+   b)   设置DLL频率，此处选择2-6M
+
+   c)   使能高精度PWM(CC0/1)死区(Dead Zone)插入功能
+
+   d)   设置CC0,CC1死区插入时间，此处16个档位可调
 
 
 # 3. 代码编译
@@ -58,7 +80,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 暂不支持。
 
 ### 4.1.2 Keil C51 IDE
-![image](./test.gif)
+<img src="./test.gif" alt="image"  />
 
 1. 编译工程。
 2. 打开"Option-->Debug"界面。
@@ -75,11 +97,11 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 需要使用示波器两个通道分别连接P04,P10进行观察，可以分别调用和不调用PROU_deadzone_Init();的不同，此处展示正确的对比
 
-![image](./dead.gif)
+<img src="./dead.gif" alt="image" style="zoom: 25%;" />
 
 ​                                                                       插入死区
 
-![image](./no_dead.gif)
+<img src="./no_dead.gif" alt="image" style="zoom:25%;" />
 
 ​		                                                                          不插入死区
 

@@ -22,7 +22,7 @@
  
 #include "ss881x.h"
 
-/* Reset引脚复位 需要使用前外部或内部上拉 */
+/* Reset pin must pull up first */
 /* PWRCON2 bit7:3   PWRCON4 bit4  P1MOD bit7:6  PWKCTL bit5:0  SFR  SSD */
 
 static void _delay_ms(unsigned char ms)
@@ -43,7 +43,7 @@ void main()
         P0PU |= (1<<3);                         /* enable pull-up */
         MFP0 = (MFP0 & ~(0x03<<6)) | (1<<6);    /* set P03 RESET */
         
-        WDTCON = 0x05;                          /* 关闭看门狗 */      
+        WDTCON = 0x05;                          /* disable watchdog at startup */     
         
         P0MOD &= ~0x02;                 /* P01 as GPIO output */
         

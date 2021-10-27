@@ -35,8 +35,7 @@ static void _delay_ms(unsigned char ms)
     do {
         i = 4;
         j = 200;
-        do
-        {
+        do{
             while (--j);
         } while (--i);
     } while (--ms);
@@ -45,7 +44,7 @@ static void _delay_ms(unsigned char ms)
 
 void main()
 {                  
-        WDTCON = 0x05;                          /* disable watchdog at startup */
+        WDTCON = 0x05;                  /* disable watchdog at startup */
         
         PWRCON2 &= ~(0x03<<6);          /* set low voltage reset value */
         PWRCON2 &= ~(0x07<<3);          
@@ -74,6 +73,6 @@ void main()
         
         while (1){    
                 P0 ^= 0x02;
-		_delay_ms(500);	
+                _delay_ms(500);	
         }
 }

@@ -30,8 +30,7 @@ static void _delay_ms(unsigned char ms)
     do {
         i = 4;
         j = 200;
-        do
-        {
+        do{
             while (--j);
         } while (--i);
     } while (--ms);
@@ -70,7 +69,7 @@ void main()
         while (1){
                 if(idog<20){
                         idog++;
-                        RESETS |= (1<<7);       /* Î¹¹· */
+                        RESETS |= (1<<7);      /* feed dog */
                 }     
                 P0 ^= 0x02;
 		_delay_ms(500);	

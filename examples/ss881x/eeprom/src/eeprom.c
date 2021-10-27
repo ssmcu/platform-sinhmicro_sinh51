@@ -91,7 +91,7 @@ void eeprom_read(unsigned char addr,unsigned char *date,unsigned char num)
 
 void main()
 {       
-        WDTCON = 0x05;                           /* πÿ±’ø¥√≈π∑ */
+        WDTCON = 0x05;            /* disable watchdog at startup */
         
         eeprom_write(0x02,WD,5);
         eeprom_read(0x02,RD,5);   /* eeprom read 0x02 5 */
