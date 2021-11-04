@@ -41,15 +41,14 @@ static void _delay_ms(unsigned char ms)
 void main()
 {       
         P0PU |= (1<<3);                         /* enable pull-up */
-        MFP0 = (MFP0 & ~(0x03<<6)) | (1<<6);    /* set P03 RESET */
+        MFP0 = (MFP0 & ~(0x03 << 6)) | (1 << 6);    /* set P03 RESET */
         
         WDTCON = 0x05;                          /* disable watchdog at startup */     
         
         P0MOD &= ~0x02;                 /* P01 as GPIO output */
         
-        if(RESETS&(1<<1))
-        {
-                RESETS &= ~(1<<1);      /* clear reset flag */
+        if(RESETS&(1<<1)){
+                RESETS &= ~(1 << 1);      /* clear reset flag */
                 
                 P0MOD &= ~0x01;         /* P00 as GPIO output */
                 P0 &= ~0x01;
@@ -67,6 +66,6 @@ void main()
         
         while (1){
                 P0 ^= 0x02;
-		_delay_ms(500);	
+                _delay_ms(500);	
         }
 }

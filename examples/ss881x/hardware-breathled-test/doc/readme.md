@@ -1,15 +1,9 @@
 # 1. 功能说明
-​	读、写EEPROM
+​	以硬件方式实现呼吸灯
 
 # 2. 功能实现
 
-1.写流程： 
-
-a)  EEPCON使能 写   b)  EEPADR写入地址   c) EEPDAT放入数据  d)  EEPCON激活写周期   e) EEPCON等待写周期清0    f) 重复b-d    g) EEPCON清除读写使能控制
-
-2.读流程
-
-a)  EEPCON使能 读   b)  EEPADR写入地址   c)  EEPCON激活读周期   d) EEPCON等待写周期清0    e) EEPDAT读出数据  c) 重复b-e  d) EEPCON清除读写使能控制
+使用MFP0寄存器复用P00为PWM0。使用TBLNCON0寄存器设置呼吸灯时间。使用TCON寄存器启动呼吸灯模式，启动PWM0输出，启动定时器0
 
 # 3. 代码编译
 
@@ -53,6 +47,10 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
+<img src="./hardware_breathLED_Link.gif">
+
+（将P00接到拓展版LED上）
+
 ### 4.2.2 通过Flash_Tools烧录固件
 
 和其它示例基本一致，不再详细说明，具体请参考：
@@ -62,16 +60,8 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 ### 4.2.3 硬件调试
 
 1. 使用USB B连接线将调试器与PC连接起来。
-
 2. 点击Flash烧录软件，芯片状态下的“连接按钮”。
+3. 观察LED灯闪烁状态
 
-3. 借用FLASH TOOL工具
-
-   首先屏蔽eeprom_read()函数，运行后使用输入 eeprom read 0x02 5，显示16进制数据 “hello”展示为
-
-   ![](./write.jpg)
-
-​        再屏蔽eeprom_write()函数，在调试模式运行可以看到RD的值就是读到的，也可以借助FLASH TOOL修改，观察变化
-
-![](./read.jpg)
+![image](./hardware_breathLED.gif)
 

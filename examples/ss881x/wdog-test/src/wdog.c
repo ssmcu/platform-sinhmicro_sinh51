@@ -42,15 +42,15 @@ void main()
         
         idog = 0;
         
-        WDTCON &= ~(1<<7);              /* WDOG dont work in idle */
-        WDTCON &= ~(0x07<<4);
-        WDTCON |= (0x02<<4);            /* set WDOG timout 2s*/
+        WDTCON &= ~(1 << 7);              /* WDOG dont work in idle */
+        WDTCON &= ~(0x07 << 4);
+        WDTCON |= (0x02 << 4);            /* set WDOG timout 2s*/
         
         
         P0MOD &= ~0x02;                 /* P01 as GPIO output */
         
-        if(RESETS&(1<<4)){
-                RESETS &= ~(1<<4);      /* clear reset flag */
+        if( RESETS&(1 << 4) ){
+                RESETS &= ~(1 << 4);      /* clear reset flag */
                 
                 P0MOD &= ~0x01;         /* P00 as GPIO output */
                 P0 &= ~0x01;
@@ -72,6 +72,6 @@ void main()
                         RESETS |= (1<<7);      /* feed dog */
                 }     
                 P0 ^= 0x02;
-		_delay_ms(500);	
+                _delay_ms(500);	
         }
 }

@@ -21,9 +21,22 @@
  */
  
 #include "ss881x.h"
+#include "string.h"
 
-unsigned char WD[5] = "hello";
-unsigned char RD[5] = "     ";  
+unsigned char write_buffer[5] = "hello";
+unsigned char read_buffer[5] = "     ";  
+
+static void _delay_ms(unsigned char ms)
+{	
+    unsigned char i, j;
+    do {
+        i = 4;
+        j = 200;
+        do{
+            while (--j);
+        } while (--i);
+    } while (--ms);
+}
 
 void eeprom_write_byte(unsigned char addr,unsigned char byt)
 {
@@ -93,9 +106,14 @@ void main()
 {       
         WDTCON = 0x05;            /* disable watchdog at startup */
         
-        eeprom_write(0x02,WD,5);
-        eeprom_read(0x02,RD,5);   /* eeprom read 0x02 5 */
+        P0MOD &= ~(1 << 0); 
+        
+        eeprom_write(0x02,write_buffer,5);
+        eeprom_read(0x02,read_buffer,5);   /* eeprom read 0x02 5 */
         while (1){
-			
+                if( strcmp(read_buffer,"hello")==0 ){   
+                        P0DAT ^= 0x01;
+                        _delay_ms(500);
+                }
         }
 }
