@@ -23,9 +23,6 @@
 #include "ss881x.h"
 #include "string.h"
 
-unsigned char write_buffer[5] = "hello";
-unsigned char read_buffer[5] = "     ";  
-
 static void _delay_ms(unsigned char ms)
 {	
     unsigned char i, j;
@@ -48,10 +45,10 @@ void eeprom_write_byte(unsigned char addr,unsigned char byt)
         EFRDAT = byt;           /* set dat */
         
         EFRADR = 0x02;
-        EFRDAT |= (1<<3);       /* start write */
+        EFRDAT |= (1 << 3);       /* start write */
         
         EFRADR = 0x02;
-        while(EFRDAT&(1<<3));   /* wait finish */
+        while(EFRDAT&(1 << 3));   /* wait finish */
 }
 
 void eeprom_write(unsigned char addr,unsigned char *dat,unsigned char num)
@@ -62,7 +59,7 @@ void eeprom_write(unsigned char addr,unsigned char *dat,unsigned char num)
         EFRDAT |= 0x02;         /* enable write */
         
         while(i<num){
-                eeprom_write_byte(addr+i,dat[i]);
+                eeprom_write_byte(addr+i, dat[i]);
                 i++;
         }
         EFRDAT &= ~0x03;        /* clear write */
@@ -77,10 +74,10 @@ unsigned char eeprom_read_byte(unsigned char addr)
         
         
         EFRADR = 0x02;
-        EFRDAT |= (1<<2);       /* start read */
+        EFRDAT |= (1 << 2);       /* start read */
         
         EFRADR = 0x02;
-        while(EFRDAT&(1<<2));   /* wait finish */
+        while(EFRDAT&(1 << 2));   /* wait finish */
         
         EFRADR = 0x01;
         dat = EFRDAT;
@@ -96,22 +93,25 @@ void eeprom_read(unsigned char addr,unsigned char *date,unsigned char num)
         EFRDAT |= 0x01;         /* enable read */
         
         while(i<num){
-                *(date+i) = eeprom_read_byte(addr+i);
+                *(date + i) = eeprom_read_byte(addr + i);
                 i++;
         }
         EFRDAT &= ~0x03;        /* clear write */
 }
 
-void main()
+void main(void)
 {       
+        unsigned char write_buffer[5] = "hello";
+        unsigned char read_buffer[5] = "     ";  
+        
         WDTCON = 0x05;            /* disable watchdog at startup */
         
         P0MOD &= ~(1 << 0); 
         
-        eeprom_write(0x02,write_buffer,5);
-        eeprom_read(0x02,read_buffer,5);   /* eeprom read 0x02 5 */
+        eeprom_write(0x02, write_buffer, 5);
+        eeprom_read(0x02, read_buffer, 5);   /* eeprom read 0x02 5 */
         while (1){
-                if( strcmp(read_buffer,"hello")==0 ){   
+                if( strcmp(read_buffer, "hello")==0 ){   
                         P0DAT ^= 0x01;
                         _delay_ms(500);
                 }

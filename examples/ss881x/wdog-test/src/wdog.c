@@ -22,8 +22,6 @@
  
 #include "ss881x.h"
 
-unsigned char idog;
-
 static void _delay_ms(unsigned char ms)
 {	
     unsigned char i, j;
@@ -38,9 +36,8 @@ static void _delay_ms(unsigned char ms)
 
 
 void main()
-{                  
-        
-        idog = 0;
+{                    
+        unsigned char feed_counter = 0;
         
         WDTCON &= ~(1 << 7);              /* WDOG dont work in idle */
         WDTCON &= ~(0x07 << 4);
@@ -67,8 +64,8 @@ void main()
         }
         
         while (1){
-                if(idog<20){
-                        idog++;
+                if(feed_counter<20){
+                        feed_counter++;
                         RESETS |= (1<<7);      /* feed dog */
                 }     
                 P0 ^= 0x02;

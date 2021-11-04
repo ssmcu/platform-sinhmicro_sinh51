@@ -39,7 +39,7 @@ void timer2_cc_init(void)
 }
 
 
-void PROU_deadzone_Init(void)
+void prou_deadzone_init(void)
 {       
         HPWMCON0 = 0x04;                /* enable dead zone */
         HPWMDZT0 = 0xff;                /* set DZT0 (0-15) */
@@ -52,17 +52,17 @@ void main(void)
 {
         WDTCON = 0x05;                          /* disable watchdog at startup */
 
-        RCCON |= (1<<0);                        /* Enable HIRC */
-        while (!(RCCON & (1 << 1) ) );          /* Waiting for stable */      
+        RCCON |= (1 << 0);                        /* Enable HIRC */
+        while ( !(RCCON & (1 << 1) ) );          /* Waiting for stable */      
         CLKCON0 = 0x07;
         
-        MFP1 |= (0x01<<0);                      
+        MFP1 |= (0x01 << 0);                      
         EFRADR  =  0x12;                                                     
-        EFRDAT  &= ~(0x03<<0);
-        MFP2 |= (0x03<<0);                      /* SET CC0,CC1 in P04,P10 */
+        EFRDAT  &= ~(0x03 << 0);
+        MFP2 |= (0x03 << 0);                      /* SET CC0,CC1 in P04,P10 */
 
         timer2_cc_init();
-        PROU_deadzone_Init();          
+        prou_deadzone_init();          
         
         while (1){
 

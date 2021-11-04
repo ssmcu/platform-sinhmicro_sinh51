@@ -186,7 +186,7 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>src\eeprom.c</Filename>
+          <Filename>D:\gitfile\platform-sinhmicro_sinh51\examples\ss881x\eeprom-test\prj\keil\src\eeprom.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
