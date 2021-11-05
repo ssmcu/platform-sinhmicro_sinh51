@@ -66,8 +66,7 @@ int uart_rx()
 
 unsigned int checksum_rxtx( int *a, unsigned int length)
 {
-    unsigned int i, checksum;
-    checksum = 0;
+    unsigned int i, checksum = 0;
     for (i = 0; i < length - 1; i++) {
         checksum += *a;              /* 计算接收校验和checksum_rx */
         a++;
@@ -78,7 +77,6 @@ unsigned int checksum_rxtx( int *a, unsigned int length)
 void main()
 {
     WDTCON  = 0x05;                                  /* 关闭看门狗 */
-    //CKCON   = (CKCON & 0X8F) | 0X10;                 /* 减小程序访问的等待周期，增加MCU的速度 */
     sign    = 0XFE;
     err[0]  = 'e';
     err[1]  = 'r';
