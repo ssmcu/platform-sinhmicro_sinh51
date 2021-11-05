@@ -45,7 +45,7 @@ void prou_deadzone_init(void)
         HPWMDZT0 = 0xff;                /* set DZT0 (0-15) */
         DLLCON0 = 0x03;                 /* set DLL source,enable */
         DLLCON1 = 0x0a;                 /* set DLL Freq range */
-        while(! (DLLCON0&(1<<3) ) );    /* wait DLL enable */
+        while (!(DLLCON0&(1 << 3)));    /* wait DLL enable */
 }
 
 void main(void)

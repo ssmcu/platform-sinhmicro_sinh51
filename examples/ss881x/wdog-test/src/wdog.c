@@ -46,7 +46,7 @@ void main()
         
         P0MOD &= ~0x02;                 /* P01 as GPIO output */
         
-        if( RESETS&(1 << 4) ){
+        if (RESETS&(1 << 4)) {
                 RESETS &= ~(1 << 4);      /* clear reset flag */
                 
                 P0MOD &= ~0x01;         /* P00 as GPIO output */
@@ -66,7 +66,7 @@ void main()
         while (1){
                 if(feed_counter<20){
                         feed_counter++;
-                        RESETS |= (1<<7);      /* feed dog */
+                        RESETS |= (1 << 7);      /* feed dog */
                 }     
                 P0 ^= 0x02;
                 _delay_ms(500);	

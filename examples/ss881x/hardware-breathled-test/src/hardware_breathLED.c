@@ -24,11 +24,11 @@
 
 void breath_init(void)
 {
-        MFP0  = 0x01;           /* P00 work in pwm0 */
+        MFP0 = 0x01;           /* P00 work in pwm0 */
 	
         TBLNCON0 &= ~0xf0;      /* set cycle work in 4s */
 
-        TCON  |=0x07;           /* start timer0,PWMx,BLNx */
+        TCON |= 0x07;           /* start timer0,PWMx,BLNx */
  
 }
 
@@ -38,7 +38,7 @@ void main()
         
         breath_init();
     
-        while (1){
+        while (1) {
 			
         }
 }

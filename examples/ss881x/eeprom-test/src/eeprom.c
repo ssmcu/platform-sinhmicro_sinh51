@@ -58,7 +58,7 @@ void eeprom_write(unsigned char addr,unsigned char *dat,unsigned char num)
         EFRADR = 0x02;
         EFRDAT |= 0x02;         /* enable write */
         
-        while(i<num){
+        while (i<num) {
                 eeprom_write_byte(addr+i, dat[i]);
                 i++;
         }
@@ -92,7 +92,7 @@ void eeprom_read(unsigned char addr,unsigned char *date,unsigned char num)
         EFRADR = 0x02;
         EFRDAT |= 0x01;         /* enable read */
         
-        while(i<num){
+        while (i<num) {
                 *(date + i) = eeprom_read_byte(addr + i);
                 i++;
         }
@@ -110,8 +110,8 @@ void main(void)
         
         eeprom_write(0x02, write_buffer, 5);
         eeprom_read(0x02, read_buffer, 5);   /* eeprom read 0x02 5 */
-        while (1){
-                if( strcmp(read_buffer, "hello")==0 ){   
+        while (1) {
+                if (strcmp(read_buffer, "hello") == 0) {   
                         P0DAT ^= 0x01;
                         _delay_ms(500);
                 }
