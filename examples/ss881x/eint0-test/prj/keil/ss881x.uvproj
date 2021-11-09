@@ -110,7 +110,7 @@
           <SimDllName>S8051.DLL</SimDllName>
           <SimDllArguments></SimDllArguments>
           <SimDlgDll>DCORE51.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pR8051XC -o14000 -dSSys -dSIO -dSADC -dSCMP -dSDBG -dSTimer -dSSer -sSS881X</SimDlgDllArguments>
+          <SimDlgDllArguments>-pR8051XC -o14000 -dSSys -dSIO -dSADC -dSCMP -dSDBG -dSTimer -dSSer -sSS880X</SimDlgDllArguments>
           <TargetDllName>S8051.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TP51.DLL</TargetDlgDll>

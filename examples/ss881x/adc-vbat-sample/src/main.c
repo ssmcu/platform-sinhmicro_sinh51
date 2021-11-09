@@ -22,9 +22,6 @@
 
 #include "ss881x.h"
 
-typedef unsigned char u8;
-typedef unsigned int u16;
-
 short  vbat_mv;
 
 void adc_init()
@@ -45,8 +42,6 @@ void data_vbat_read()
 int main()
 {
     WDTCON  = 0x05;                   // disable watchdog at startup
-    
-    MFP0  = 0xC0;
     
     adc_init();
     
