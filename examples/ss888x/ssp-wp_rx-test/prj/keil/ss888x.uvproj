@@ -7,20 +7,20 @@
 
   <Targets>
     <Target>
-      <TargetName>Target </TargetName>
+      <TargetName>Target 1</TargetName>
       <ToolsetNumber>0x0</ToolsetNumber>
       <ToolsetName>MCS-51</ToolsetName>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>SS881X</Device>
+          <Device>SS888X</Device>
           <Vendor>SinhMicro</Vendor>
-          <Cpu>IRAM(0-0xBF) IROM(0-0x7FF) CLOCK(12000000)  MODC2</Cpu>
+          <Cpu>IRAM(0-0xFF) XRAM(0x8000-0x833F) IROM(0-0x3FFF) CLOCK(12000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
-          <StartupFile>"LIB\START_SS881X.A51"("SS881X Startup Code")</StartupFile>
+          <StartupFile>"LIB\START_SS888X.A51"("SS888X Startup Code")</StartupFile>
           <FlashDriverDll></FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>SS881X.H</RegisterFile>
+          <RegisterFile>SS888X.H</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -46,7 +46,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\Objects\</OutputDirectory>
-          <OutputName>ss881x</OutputName>
+          <OutputName>ss888x</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -79,8 +79,8 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>1</RunUserProg2>
-            <UserProg1Name>C:\Keil_v5\C51\BIN\ihex2bin.exe -i Objects\ss881x.hex -o Output\ss881x.bin</UserProg1Name>
-            <UserProg2Name>C:\Keil_v5\C51\BIN\binEncrypt.exe Output\ss881x.bin Output\ss881x_fw.bin 0x53383058</UserProg2Name>
+            <UserProg1Name>C:\Keil_v5\C51\BIN\ihex2bin.exe -i Objects\ss888x.hex -o Output\ss888x.bin</UserProg1Name>
+            <UserProg2Name>C:\Keil_v5\C51\BIN\binEncrypt.exe Output\ss888x.bin Output\ss888x_fw.bin 0x53383058</UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
@@ -110,7 +110,7 @@
           <SimDllName>S8051.DLL</SimDllName>
           <SimDllArguments></SimDllArguments>
           <SimDlgDll>DCORE51.DLL</SimDlgDll>
-          <SimDlgDllArguments>-pR8051XC -o14000 -dSSys -dSIO -dSADC -dSCMP -dSDBG -dSTimer -dSSer -sSS881X</SimDlgDllArguments>
+          <SimDlgDllArguments>-pR8051XC -o14000 -dSSys -dSIO -dSEEPROM -dSCMP -dSDBG -dSTimer -dSSer -sSS885X</SimDlgDllArguments>
           <TargetDllName>S8051.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
           <TargetDlgDll>TP51.DLL</TargetDlgDll>
@@ -139,7 +139,7 @@
           <Target>
             <UseTarget>1</UseTarget>
             <LoadApplicationAtStartup>1</LoadApplicationAtStartup>
-            <RunToMain>0</RunToMain>
+            <RunToMain>1</RunToMain>
             <RestoreBreakpoints>1</RestoreBreakpoints>
             <RestoreWatchpoints>1</RestoreWatchpoints>
             <RestoreMemoryDisplay>1</RestoreMemoryDisplay>
@@ -168,14 +168,14 @@
         </DebugOption>
         <Utilities>
           <Flash1>
-            <UseTargetDll>0</UseTargetDll>
+            <UseTargetDll>1</UseTargetDll>
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>0</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
+            <Capability>1</Capability>
             <DriverSelection>-1</DriverSelection>
           </Flash1>
-          <bUseTDR>0</bUseTDR>
+          <bUseTDR>1</bUseTDR>
           <Flash2></Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
@@ -196,7 +196,7 @@
             <UseMultipleDPTR>0</UseMultipleDPTR>
             <UseOnchipXram>0</UseOnchipXram>
             <HadIRAM>1</HadIRAM>
-            <HadXRAM>0</HadXRAM>
+            <HadXRAM>1</HadXRAM>
             <HadIROM>1</HadIROM>
             <Moda2>0</Moda2>
             <Moddp2>0</Moddp2>
@@ -219,7 +219,7 @@
             <hadXRAM2>0</hadXRAM2>
             <uocXram2>0</uocXram2>
             <hadXRAM3>0</hadXRAM3>
-            <ModC2>1</ModC2>
+            <ModC2>0</ModC2>
             <ModH2>0</ModH2>
             <Mdu_R515>0</Mdu_R515>
             <Mdu_F120>0</Mdu_F120>
@@ -273,17 +273,17 @@
               <IRO>
                 <Type>1</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x800</Size>
+                <Size>0x4000</Size>
               </IRO>
               <IRA>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0xc0</Size>
+                <Size>0x100</Size>
               </IRA>
               <XRA>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x8000</StartAddress>
+                <Size>0x340</Size>
               </XRA>
               <XRA512>
                 <Type>0</Type>
@@ -324,7 +324,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\inc;..\..\prj</IncludePath>
+              <IncludePath></IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -347,7 +347,7 @@
             <WarningLevel>2</WarningLevel>
             <DataOverlaying>1</DataOverlaying>
             <OverlayString></OverlayString>
-            <MiscControls>REMOVEUNUSED</MiscControls>
+            <MiscControls></MiscControls>
             <DisableWarningNumbers></DisableWarningNumbers>
             <LinkerCmdFile></LinkerCmdFile>
             <Assign></Assign>
@@ -374,17 +374,17 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Src</GroupName>
+          <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>START_SS881X.A51</FileName>
+              <FileName>START_SS888X.A51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\START_SS881X.A51</FilePath>
+              <FilePath>.\START_SS888X.A51</FilePath>
             </File>
             <File>
-              <FileName>sppu.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\src\sppu.c</FilePath>
+              <FilePath>..\..\src\main.c</FilePath>
             </File>
           </Files>
         </Group>
