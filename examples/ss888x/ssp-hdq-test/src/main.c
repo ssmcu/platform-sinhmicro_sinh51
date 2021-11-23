@@ -54,7 +54,7 @@ void ssp_hdq_tx(u8 dt)
 	AFR_SSP_DAT = dt;
 }
 
-void send_StartFlag(u8 j, u8 packet_type[])
+void send_StartFlag(u8 len, u8 packet_type[])
 {
 	u8 i;
 	
@@ -63,7 +63,7 @@ void send_StartFlag(u8 j, u8 packet_type[])
     AFR_SSP_T_ZERO  = 0x5E;
 	AFR_SSP_T_ONE   = 0xF0;
 	
-	for (i = 0; i < j; i++)
+	for (i = 0; i < len; i++)
 	{
 		ssp_hdq_tx(packet_type[i]);
 	}
@@ -79,7 +79,7 @@ void send_StopFlag(u8 off)
 	ssp_hdq_tx(off);
 }
 
-void send_packet(u8 j, u8 packet_type[])
+void send_packet(u8 len, u8 packet_type[])
 {
 	u8 i;
 	
@@ -89,7 +89,7 @@ void send_packet(u8 j, u8 packet_type[])
 	AFR_SSP_T_ONE   = 0x82;
 	AFR_SSP_T_STOP  = 0xC0;
 	
-	for (i = 0; i < j; i++)
+	for (i = 0; i < len; i++)
 	{
 		ssp_hdq_tx(packet_type[i]);
 	}

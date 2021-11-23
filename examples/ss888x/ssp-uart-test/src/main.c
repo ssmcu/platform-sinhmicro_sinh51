@@ -44,7 +44,7 @@ void ssp_uart_init()
 
 void ssp_uart_tx(unsigned char dt)
 {
-	while (AFR_SSP_FIFOSTART & 0x01);
+	while ((AFR_SSP_FIFOSTART & 0x01) != 0);
 	AFR_SSP_DAT  = dt;
 }
 
@@ -58,6 +58,8 @@ int main()
 	
 	while (1) {
 		ssp_uart_tx(0xAA);
+		_delay_ms(500);
+		ssp_uart_tx(0x55);
 		_delay_ms(500);
 	}
 }

@@ -87,4 +87,4 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 ![image](./ssp-uart-test-debugger.GIF)
 
-（发送数据为0xAA，数据从低位开始发送。）
+（发送数据为0xAA和0x55，数据从低位开始发送。）

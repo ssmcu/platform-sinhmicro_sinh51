@@ -1,0 +1,141 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              11/23/2021 16:46:13 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ..\..\src\main.c OMF2 OPTIMIZE(8,SPEED) BROWSE DEBUG PRINT(.\Listings\ma
+                    -in.lst) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          /* Author: zhanyingwei<3080940495@qq.com>
+   2           * 
+   3           * Copyright (C) 2021 Sinh Micro, Inc.
+   4           *
+   5           * Licensed under the Apache License, Version 2.0 (the "License");
+   6           * you may not use this file except in compliance with the License.
+   7           * You may obtain a copy of the License at
+   8           *
+   9           *     http://www.apache.org/licenses/LICENSE-2.0
+  10           *
+  11           * Unless required by applicable law or agreed to in writing, software
+  12           * distributed under the License is distributed on an "AS IS" BASIS,
+  13           * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  14           * See the License for the specific language governing permissions and
+  15           * limitations under the License.
+  16           */
+  17          
+  18          #include "ss888x.h"
+  19          
+  20          typedef unsigned char uint8_t;
+  21          
+  22          uint8_t sending_buf[1];
+  23          
+  24          /* The preamble consists of a minimum of 11 and a maximum of 25 bits, all set to ONE */
+  25          #define PREAMBLE_BYTE_CNT    (2)               /* PREAMBLE_BYTE_CNT == 2 or 3 */
+  26          
+  27          code uint8_t Packet_Ping[2] ={
+  28                  0x01, 0x80 
+  29          };
+  30          
+  31          code uint8_t Packet_ID[8] ={
+  32                  0x71, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00 , 0x00 
+  33          };
+  34          
+  35          code uint8_t Packet_Config[6] ={
+  36                  0x51, 0x0A, 0x00, 0x00, 0x26 , 0x00 
+  37          };
+  38          
+  39          static void _delay_ms(unsigned char ms)
+  40          {       
+  41   1          unsigned char i, j;
+  42   1          do {
+  43   2              i = 4;
+  44   2              j = 200;
+  45   2              do
+  46   2              {
+  47   3                  while (--j);
+  48   3              } while (--i);
+  49   2          } while (--ms);
+  50   1      }
+  51          
+  52          void wp_init(void)
+  53          {
+  54   1              CLK_CTL2  |= 0x08;                         /* enable SSP Clock */
+C51 COMPILER V9.60.0.0   MAIN                                                              11/23/2021 16:46:13 PAGE 2   
+
+  55   1              
+  56   1              AFR_SSP_CON1  &= ~0x80;
+  57   1              
+  58   1              AFR_SSP_T_START |= 0x40;
+  59   1      }
+  60          
+  61          static void wp_rx_tx(uint8_t dt)
+  62          {
+  63   1              while ( (AFR_SSP_FIFOSTART & 0x01) != 0 );
+  64   1              AFR_SSP_DAT = dt;
+  65   1      }
+  66          
+  67          static void send_preamble(void)
+  68          {
+  69   1              uint8_t i;
+  70   1      
+  71   1              AFR_SSP_CON0  = 0x0D;
+  72   1              
+  73   1          for (i = 0; i < PREAMBLE_BYTE_CNT; i++) {
+  74   2                      wp_rx_tx(0xFF);
+  75   2          }
+  76   1      }
+  77          
+  78          static void send_packet(uint8_t *pkt_type, uint8_t len)
+  79          {
+  80   1              uint8_t i, crc = 0;
+  81   1              
+  82   1              send_preamble();
+  83   1              
+  84   1              AFR_SSP_CON0  = 0x7D;
+  85   1              
+  86   1              for (i = 0; i < len; i++) {
+  87   2                      wp_rx_tx(pkt_type[i]);
+  88   2                      crc ^= pkt_type[i];
+  89   2              }
+  90   1              wp_rx_tx(crc);
+  91   1      }
+  92          
+  93          int main()
+  94          {
+  95   1              WDTCON = 0x05;                             /* disable watchdog at startup */
+  96   1              
+  97   1              MFP3  |= 0x10;                             /* P14 as ssp */
+  98   1              
+  99   1              wp_init();      
+ 100   1              
+ 101   1              while (1) {
+ 102   2                      send_packet(Packet_Ping,2);
+ 103   2                      _delay_ms(10);
+ 104   2                      send_packet(Packet_ID,8);
+ 105   2                      _delay_ms(10);
+ 106   2                      send_packet(Packet_Config,6);
+ 107   2                      _delay_ms(10);
+ 108   2              }
+ 109   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    185    ----
+   CONSTANT SIZE    =     16    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.60.0.0   MAIN                                                              11/23/2021 16:46:13 PAGE 3   
+
+   DATA SIZE        =      1       3
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

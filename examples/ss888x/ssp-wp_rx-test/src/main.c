@@ -17,23 +17,22 @@
 
 #include "ss888x.h"
 
-typedef unsigned char u8;
+typedef unsigned char uint8_t;
 
-u8 sending_buf[1];
+uint8_t sending_buf[1];
 
-code u8 preamble[2] ={
-	0xFF, 0xFF 
-};
+/* The preamble consists of a minimum of 11 and a maximum of 25 bits, all set to ONE */
+#define PREAMBLE_BYTE_CNT    (2)               /* PREAMBLE_BYTE_CNT == 2 or 3 */
 
-code u8 Packet_Ping[2] ={
+code uint8_t Packet_Ping[2] ={
 	0x01, 0x80 
 };
 
-code u8 Packet_ID[8] ={
+code uint8_t Packet_ID[8] ={
 	0x71, 0x11, 0x00, 0x00, 0x00, 0x00, 0x00 , 0x00 
 };
 
-code u8 Packet_Config[6] ={
+code uint8_t Packet_Config[6] ={
 	0x51, 0x0A, 0x00, 0x00, 0x26 , 0x00 
 };
 
@@ -50,33 +49,45 @@ static void _delay_ms(unsigned char ms)
     } while (--ms);
 }
 
-void ssp_wprx_init()
+void wp_init(void)
 {
 	CLK_CTL2  |= 0x08;                         /* enable SSP Clock */
 	
-	AFR_SSP_CON0  = 0x7D;
+	AFR_SSP_CON1  &= ~0x80;
 	
 	AFR_SSP_T_START |= 0x40;
 }
 
-void ssp_wprx_tx(u8 dt)
+static void wp_rx_tx(uint8_t dt)
 {
-	while (AFR_SSP_FIFOSTART & 0x01);
+	while ( (AFR_SSP_FIFOSTART & 0x01) != 0 );
 	AFR_SSP_DAT = dt;
 }
 
-void send_packet(u8 j, u8 packet_type[])
+static void send_preamble(void)
 {
-	u8 i, crc;
-	crc = 0;
-	for (i = 0; i < j; i++)
-	{
-		ssp_wprx_tx(packet_type[i]);
-		sending_buf[0] = packet_type[i];
-		crc ^= sending_buf[0];
+	uint8_t i;
+
+	AFR_SSP_CON0  = 0x0D;
+	
+    for (i = 0; i < PREAMBLE_BYTE_CNT; i++) {
+		wp_rx_tx(0xFF);
+    }
+}
+
+static void send_packet(uint8_t *pkt_type, uint8_t len)
+{
+	uint8_t i, crc = 0;
+	
+	send_preamble();
+	
+	AFR_SSP_CON0  = 0x7D;
+	
+	for (i = 0; i < len; i++) {
+		wp_rx_tx(pkt_type[i]);
+		crc ^= pkt_type[i];
 	}
-	sending_buf[0] = crc;
-	ssp_wprx_tx(sending_buf[0]);
+	wp_rx_tx(crc);
 }
 
 int main()
@@ -85,22 +96,14 @@ int main()
 	
 	MFP3  |= 0x10;                             /* P14 as ssp */
 	
-	ssp_wprx_init();	
-
+	wp_init();	
+	
 	while (1) {
-	ssp_wprx_tx(preamble[0]);
-	ssp_wprx_tx(preamble[1]);
-	send_packet(2, Packet_Ping);
-	_delay_ms(20);
-	
-	ssp_wprx_tx(preamble[0]);
-	ssp_wprx_tx(preamble[1]);
-	send_packet(8, Packet_ID);
-	_delay_ms(20);
-	
-	ssp_wprx_tx(preamble[0]);
-	ssp_wprx_tx(preamble[1]);
-	send_packet(6, Packet_Config);
-	_delay_ms(20);
+		send_packet(Packet_Ping,2);
+		_delay_ms(10);
+		send_packet(Packet_ID,8);
+		_delay_ms(10);
+		send_packet(Packet_Config,6);
+		_delay_ms(10);
 	}
 }
