@@ -60,7 +60,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 ### 4.1.2 Keil C51 IDE
 
-![image](.\adc_ntc_sample-simulator.gif)
+![image](./adc-ntc-sample-simulator.gif)
 
 1. 编译工程。
 2. 打开"Option-->Debug"界面。
@@ -84,4 +84,5 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 实际电路搭配如图所示，AN2通道接NTC温度测量，在keil硬件仿真中读取电压值，根据 R(KΩ)=V(mv) /20，得到电阻值，最后参考热敏电阻的数据手册查表得到电阻对应的温度。
 
-![image](.\adc_ntc_sample-电路图.png)
+![image](./adc-ntc-sample-schematic.gif)
+
