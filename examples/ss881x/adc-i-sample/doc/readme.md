@@ -1,7 +1,7 @@
 # 1. 功能说明
 SS881X利用ADC模块的AN4或AN5工作在微电压模式时，内部使能了12/24/36倍增益放大器，结合外部采样电阻，可单独用作单端电流检测，如下图：
 
-![image](.\adc_i_sample-电路图.png)
+![image](.\adc_i_sample-.gif)
 
  本例程通过将P11的AN5配置为微电压模式，内部使能了36倍增益放大器，结合外部采样电阻，测量负载的电流。（ADC采样电流实质是通过电阻将电流转换为电压采样）
 
@@ -12,7 +12,7 @@ SS881X利用ADC模块的AN4或AN5工作在微电压模式时，内部使能了12
 1. 关闭看门狗，配置MFP2，P11作为AN5通道；
 2. ADC和时钟配置：
 
-（1）配置CLKCON1寄存器，将SCLK给ADC，使能ADC；（必须先使能ADC时钟才能配置其他寄存器）
+（1）配置CLKCON1寄存器，将SCLK给ADC，使能ADC；（必须先使能ADC才能配置其他寄存器）
 
 （2）配置ADCCON0寄存器，定义ADC为连续模式（周期采样），ADC采样时钟1MHz，ADC采样后滤波求均值样本个数128；
 
@@ -90,10 +90,10 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 ### 4.2.3 硬件调试
 
-实际电路搭配如下图所示：例如本例程，外部电路接入5V模拟电池，负载为1KΩ，采样电阻为1Ω，则电路的电流为5mA。
+实际电路搭配如下图所示：例如本例程，接入5V模拟电池，负载为1KΩ，采样电阻为1Ω，则电路的电流为5mA。
 
-<img src=".\adc_i_sample-实际电路.png" alt="image" style="zoom: 67%;" />
+![image](.\adc_i_sample-chematic.gif)
 
 用keil调试时，得到的值为176(如下图)，由 I(mA)=ADCVAL / 36 / R得，I(mA) =176 / 36  / 1 = 4.89mA。（存在一定误差且误差在一定范围内，说明没问题）
 
-<img src=".\adc_i_sample-debug.jpg" alt="image" style="zoom: 80%;" />
+![image](.\adc_i_sample-debug.gif)
