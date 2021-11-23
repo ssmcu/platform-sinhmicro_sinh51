@@ -1,7 +1,7 @@
 # 1. 功能说明
 SS881X利用ADC模块的AN4或AN5工作在微电压模式时，内部使能了12/24/36倍增益放大器，结合外部采样电阻，可单独用作单端电流检测，如下图：
 
-![](.\adc-i-sample.gif)
+![](./adc-i-sample.gif)
 
  本例程通过将P11的AN5配置为微电压模式，内部使能了36倍增益放大器，结合外部采样电阻，测量负载的电流。（ADC采样电流实质是通过电阻将电流转换为电压采样）
 
@@ -92,8 +92,9 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 实际电路搭配如下图所示：例如本例程，接入5V模拟电池，负载为1KΩ，采样电阻为1Ω，则电路的电流为5mA。
 
-![](.\adc-i-sample-schematic.gif)
+![](./adc-i-sample-schematic.gif)
 
 用keil调试时，得到的值为176(如下图)，由 I(mA)=ADCVAL / 36 / R得，I(mA) =176 / 36  / 1 = 4.89mA。（存在一定误差且误差在一定范围内，说明没问题）
 
-![](.\adc-i-sample-debug.gif)
+![](./adc-i-sample-debug.gif)
+
