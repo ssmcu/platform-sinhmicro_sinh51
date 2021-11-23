@@ -92,7 +92,7 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 实际电路搭配如下图所示：例如本例程，接入5V模拟电池，负载为1KΩ，采样电阻为1Ω，则电路的电流为5mA。
 
-![image](.\adc_i_sample-chematic.gif)
+![image](.\adc_i_sample-schematic.gif)
 
 用keil调试时，得到的值为176(如下图)，由 I(mA)=ADCVAL / 36 / R得，I(mA) =176 / 36  / 1 = 4.89mA。（存在一定误差且误差在一定范围内，说明没问题）
 
