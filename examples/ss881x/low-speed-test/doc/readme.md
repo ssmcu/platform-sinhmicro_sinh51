@@ -13,7 +13,7 @@ SS881X系列芯片有低速运行模式，该模式下系统被切换到低频�
 
 （4）将CKCON寄存器设置为合理值（否则可能会影响系统的性能），具体配置表为：
 
-![image](.\配置表.png)
+![image](./配置表.png)
 
 # 3. 代码编译
 
@@ -49,7 +49,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 暂不支持。
 
 ### 4.1.2 Keil C51 IDE
-![image](.\low-speed-test-simulator.gif)
+![image](./low-speed-test-simulator.gif)
 
 1. 配置工程的调试选项为模拟器，编译工程。
 2. 启动调试，打开system调试窗口。
@@ -71,4 +71,4 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 可以通过模拟电池给开发板上电，观察到低速模式下低频的功耗为2.744mA。
 
-<img src=".\low-speed-test-hardware.jpg" alt="image" style="zoom:33%;" />
+<img src="./low-speed-test-hardware.jpg" alt="image" style="zoom:33%;" />
