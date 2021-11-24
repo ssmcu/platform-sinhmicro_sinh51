@@ -52,7 +52,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 ### 4.1.2 Keil C51 IDE
 
-![image](.\efr_io_test-simulator.gif)
+![image](./efr_io_test-simulator.gif)
 
 1. 编译工程。
 2. 打开"Option-->Debug"界面。
@@ -76,7 +76,7 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 将代码烧录芯片后，通过硬件调试，将P15连接LED灯，观察LED的状态验证P15输出高电平。
 
-<img src=".\efr_io_test-hardware.jpg" alt="image" style="zoom: 67%;" />
+<img src="./efr_io_test-hardware.jpg" alt="image" style="zoom: 67%;" />
 
 
 
