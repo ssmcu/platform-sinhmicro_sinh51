@@ -132,7 +132,7 @@ static void smpwm_io_enable(uint8_t smpwm)
 
 void spwm_set_freq(uint16_t pwm_freq)
 {
-     uint16_t tr_val =  (timer2_max_val - 12000000/ pwm_freq / slk_div);   /* 计算重载值 */
+     uint16_t tr_val =  (timer2_max_val - 12000000/ pwm_freq / slk_div);   /* 计算寄存器装载值 */
      TRL2   = (tr_val  & 0xFF);
      TRH2_0 = (TRH2_0 & 0x1F) | (((tr_val >> 8) & 0x7) << 5);
      TRH2_1 = (TRH2_1 & 0x9F) | (((tr_val >> 11) & 0x3) << 5);            /* 将重载填入寄存器 */
