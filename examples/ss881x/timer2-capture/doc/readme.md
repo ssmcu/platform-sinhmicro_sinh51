@@ -55,6 +55,8 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
+1. 将P00与P02用线连接起来，P02将捕获P00输出的PWM信号。
+
 <img src="./hardware-link.jpg" style="zoom:50%;" />
 
 ### 4.2.2 通过Flash_Tools烧录固件
