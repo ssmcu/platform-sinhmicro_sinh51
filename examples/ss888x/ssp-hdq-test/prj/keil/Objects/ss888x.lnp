@@ -1,5 +1,0 @@
-".\Objects\START_SS888X.obj",
-".\Objects\main.obj" 
-TO ".\Objects\ss888x" 
-
-PRINT(".\Listings\ss888x.map")
