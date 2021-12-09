@@ -52,7 +52,7 @@ http://www.sinhmicro.com/index.php/tool/software/debugger/sinh51_keil
 
 ### 4.1.2 Keil C51 IDE
 
-![image](.\timer2-hpwm-simulator.gif)
+![image](./timer2-hpwm-simulator.gif)
 
 1.编译并运行工程；
 
