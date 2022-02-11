@@ -63,7 +63,7 @@ http://sinhmicro.com/index.php/tool/hardware/debugger/ssd8
 
 在socket上，通过模拟电池4.2V供电，P00接示波器观察波形，上电后P00输出100ms高电平，然后输出低电平，当外部给P01高电平唤醒后P00输出高电平，P00波形如下图所示：
 
-<img src="./P00波形.gif" alt="image" style="zoom:67%;" />
+<img src="./P00波形.gif" alt="image"  />
 
 
 
