@@ -146,7 +146,7 @@ void spwm_set_duty(uint8_t smpwm, uint16_t duty)
       switch (smpwm) {
 
        case 0:
-           TCC0L = tcc_val & 0x16;
+           TCC0L = tcc_val & 0xff;
            TCC0H = (TCC0H & 0xE0) | ((tcc_val >> 8) & 0x1F);
            break;
 
