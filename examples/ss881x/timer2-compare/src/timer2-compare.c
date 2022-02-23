@@ -78,7 +78,7 @@ void delay_ms(uint16_t ms)
 }
 
 
-void spwm_int()
+void spwm_init()
 {
       CLKCON0 |= 0x01;      /* SLK为12MHz */
       T2CON   |= 0x00;      /*分频系数为1 */
@@ -139,6 +139,12 @@ void spwm_set_freq(uint16_t pwm_freq)
 }
 
 
+
+
+
+/* spwm_set_duty(x, y)：x is CCx, y is the duty;
+ * value of duty: 0 ~ (TCLK/ freq / div = 12M / 4000 / 1 = 3000)    
+ */
 void spwm_set_duty(uint8_t smpwm, uint16_t duty)
 {
   uint16_t tcc_val = spwm_duty2tcc(duty);
@@ -169,6 +175,10 @@ void spwm_set_duty(uint8_t smpwm, uint16_t duty)
       }
 }
 
+
+
+
+/* spwm_enable(x): x is CCx */
 void spwm_enable(uint8_t smpwm)
 {
       T2MOD = (T2MOD & ~(0x3 << (smpwm << 1))) | (0x2 << (smpwm << 1));
@@ -183,24 +193,24 @@ void main()
 {
       WDTCON = 0x05 ;        /* 关闭看门狗 */
 
-      spwm_int();             
+      spwm_init();             
 
       spwm_set_freq(freq);   /* spwm 设置固定频率 */
 
 
       /* spwm set duty */
-      spwm_set_duty(0, (duty_0));
-      spwm_set_duty(1, (duty_1));
-      spwm_set_duty(2, (duty_2));
-      spwm_set_duty(3, (duty_3));
+      spwm_set_duty(0, duty_0);  
+      spwm_set_duty(1, duty_1);
+      spwm_set_duty(2, duty_2);
+      spwm_set_duty(3, duty_3);
 
+
+      spwm_enable(0);   /* CC0 I/O P02 enable */
+      spwm_enable(1);   /* CC1 I/O P05 enable */
+      spwm_enable(2);   /* CC2 I/O P06 enable */
+      spwm_enable(3);   /* CC3 I/O P07 enable */
 
       while (1) {
-      /* spwm enable */
-      spwm_enable(0);
-      spwm_enable(1);
-      spwm_enable(2);
-      spwm_enable(3);
       }
 }
 
