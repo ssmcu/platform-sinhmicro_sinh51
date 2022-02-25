@@ -311,7 +311,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\inc;..\..\prj</IncludePath>
+              <IncludePath>..\..\inc;..\..\prj;..\..\include</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>
@@ -372,6 +372,11 @@
               <FileName>timer2-compare.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\src\timer2-compare.c</FilePath>
+            </File>
+            <File>
+              <FileName>efr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\src\efr.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -20,9 +20,8 @@
  * limitations under the License.
  */
 
-#include "ss881x.h"
-typedef unsigned short  uint16_t;
-typedef unsigned char   uint8_t;
+#include "efr.h"
+
 
 #define slk_div                (1)     /* 分频系数 */
 #define freq                   (4000) /* 设置spwm的频率 */
@@ -204,7 +203,7 @@ void main()
       spwm_set_duty(2, duty_2);
       spwm_set_duty(3, duty_3);
 
-
+      /* spwm io enable */
       spwm_enable(0);   /* CC0 I/O P02 enable */
       spwm_enable(1);   /* CC1 I/O P05 enable */
       spwm_enable(2);   /* CC2 I/O P06 enable */
