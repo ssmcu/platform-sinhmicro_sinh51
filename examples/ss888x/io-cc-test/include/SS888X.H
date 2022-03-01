@@ -1,5 +1,5 @@
-#ifndef __SN1008_H__
-#define __SN1008_H__
+#ifndef __SS888X_H__
+#define __SS888X_H__
 
 /* 0x80~0x87 */
 sfr P0_DT = 0x80;
